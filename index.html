@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	
+	<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.4.5.min.css"/>
+	<script src="jquery.mobile/jquery-1.11.1.min.js"></script>
+	<script src="jquery.mobile/jquery.mobile-1.4.5.min.js"></script>
+	
+	<script src="cordova.js"></script>	
+
+<style>
+   li { list-style:none; }
+  .picture { list-style:none; padding:0; margin:0; }
+  .picture li { float:left; width:50%;}
+  .picture li a {display:block; margin:5px; border: 1px }
+  .picture li img { display:block; width:50%;  height:auto;}
+  .picture li img:hover { display:block; width:100%;  height:auto;} 
+</style>
+</head>
+
+<body>
+<div data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>(주)여기어때 컴퍼니</h1>
+		</div>
+		<div data-role="content" style="text-align:center">
+				<img src="logo.PNG" >
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">회사소개</a></li>
+				<li><a href="#gallery">회사사진</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>가고싶은 회사</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>회사소개</h1>
+		</div>
+		<div data-role="content">
+				<div  style="text-align:center">
+					<img src="logo.PNG">
+				</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>(주)어기어때컴퍼니어떤 기업일까</h3>
+					<p>숙박 여정의 불편함을 해결하고 신뢰할 수 있는 숙소 환경을 구축하는 숙박 플랫폼 기업이다.</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>플랫폼</h3>
+					<p>
+						합숙박 O2O 서비스 '여기어때'<br>
+						여기어때 '모바일티켓'<br>
+						여기어때 '비즈니스'<br>
+						호텔과 펜션 예약 플랫폼인 '호텔타임'<br>
+						중소형 호텔인 '호텔여기어때'<br>
+					</p>
+				</div>
+				<div data-role="collapsible" >
+					<h3>복리후생</h3>
+					<p>
+						37시간 근무를 하여 어떤 성과를 냈는가가 중요<br>
+						영어호칭제도를 이용해 수평적으로 호칭 사용<br>
+						리프레시 휴가 제도가 있어 입사 후 3년 마다 10일의 휴가, 100만원의 휴가비 지원<br>
+						시설 또한 휴게실, 샤워실, 시력보호 모니터 등 많은 복히후생으로 직원들을 많이 배려하고 즐겁게 일할 수 있는 회사입니다.<br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>고객들을 위해 헌신을 다하고, 책임감있게 일하고 싶은 민지은 입니다.</h1>
+		</div>		
+	</div>
+	
+
+	<div data-role="page" id="gallery"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>회사사진</h1>
+		</div>
+		<div data-role="content">
+            <ul class="picture">
+				<li><a href="여기어때.PNG" rel="external"><img src="여기어때.PNG" /></a></li>
+				<li><a href="모바일티켓.PNG" rel="external"><img src="모바일티켓.PNG" /></a></li>
+				<li><a href="여기어때비즈니스.PNG" rel="external"><img src="여기어때비즈니스.PNG" /></a></li>
+				<li><a href="호텔타임.PNG" rel="external"><img src="호텔타임.PNG" /></a></li>
+				<li><a href="호텔여기어때.PNG" rel="external"><img src="호텔여기어때.PNG" /></a></li>
+            </ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>고객들을 위해 헌신을 다하고, 책임감있게 일하고 싶은 민지은 입니다.</h1>
+		</div>		
+	</div>
+</div>	
+</body>
+</html>
