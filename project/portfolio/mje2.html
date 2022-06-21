@@ -1,0 +1,295 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		.a{
+			background-color: rgb(118, 119, 119);
+			color:rgb(255, 255, 255);
+		}
+		
+		.b{
+			background-color: rgb(190, 189, 189);
+			color: black;
+		}
+	</style>
+	
+	<style type="text/css">
+		#toggleSpan{
+			background-color: rgb(121, 121, 121);
+			color: aliceblue;
+			width: 45%;height: 45%;
+		}
+		#detailInfo{
+			display: none;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/> 
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+			// food class 이하의 li 태그들을 대상으로
+			// 이벤트를 적용
+			$(".food li").click(function() {
+				alert($(this).text());
+			});
+			
+		});
+	</script>
+	
+	<script type="text/javascript">
+		/* 정보 더보기와 접기가 번갈아 가면서 표현된다 
+		   detailInfo의 정보가 보이는 상태이면 접기가 표현되고
+		   detailInfo의 정보가 보이지 않는 상태이면 정보 더보기가 표현된다 
+		   toggleSpan 을 클릭하면 아래 detailInfo가 보이는 상태와 
+		   보이지 않는 상태로 번갈아 가면서 수행한다 	*/
+		
+		   $(document).ready(function() {
+			   
+			$("#toggleSpan").click(function() {
+				$("#detailInfo").slideToggle(1000,function(){
+					//상세정보가 보이지 않는 상태이면 true
+					if($(this).css("display") == "none"){ //정보 보이지 않는 상태
+						$("#toggleSpan").text("정보 더보기");
+					} else { // 정보 보이는 상태
+						$("#toggleSpan").text("정보 접기");
+					}
+				});
+			});
+			
+		});
+		
+	</script>
+
+	
+	<style>
+		.picture { list-style:none; padding:0; margin:0; width:500px;}
+		.a img {transition: all 0.2s linear; width: 400px; margin: 0px auto; overflow: hidden;}
+		#gallery{width:500px;height:500px;}
+		.img {
+    			position: absolute;
+    			width:500px;
+    			height:500px;
+    			-webkit-transition: opacity 1s ease-in-out;
+    			-moz-transition: opacity 1s ease-in-out;
+    			-o-transition: opacity 1s ease-in-out;
+    			transition: opacity 1s ease-in-out;
+    			opacity: 0;
+    			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    				filter: alpha(opacity=0);
+  			}
+
+  			.img:first-child {/* display: block; */opacity: 1;}
+
+  			#wrap {padding: 20px;}
+
+  			div {margin: 5px 0px}
+  
+	</style>
+</head>
+
+<body>
+<div data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>민지은 포트폴리오</h1>
+		</div>
+		<div data-role="content" style="text-align:center">
+				<img src="2-2.jpg" >
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">자기소개</a></li>
+				<li><a href="#movie" data-rel="dialog">영상</a></li>
+				<li><a href="#wizard3-1" data-rel="dialog">음악</a></li>
+				<li><a href="#gallery">사진</a></li>
+				<li><a href="#fav">음식</a></li>
+				<li><a href="#gi">기타사항</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>프로그래머 민지은</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>자기소개</h1>
+		</div>
+		<div data-role="content">
+				<div  style="text-align:center">
+					<img src="1-1.jpg">
+				</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>이름</h3>
+					<p>민지은</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>자기소개</h3>
+					<p>안녕하세요 휴대전화 같이 만족하고 이쁜 페이지를 만들기 위해 일 할 수 있는 민지은입니다. 
+					처음에 컴퓨터 세계로 들어왔을 때 저는 진짜 못하겠다 였습니다. 컴퓨터가 직업인 직장인들을 보고 진짜 대단하다고만 생각하엿습니다.
+					하지만 막상 컴퓨터를 접해보니 나름 재밌었고 코드를 짜고 나서 결과를 봤을 때 굉장히 뿌듯하였습니다. 
+					그래서 프로그래머라는 직업에 관심을 가지게 되었습니다. 이 직업을 처음에는 굉장히 못할거 같고 어렵겠다라고만 생각하였던 제가 이제는 누구보다 열심히 하여
+					회사에서 맘에 들 때까지 열심히 하여 포기 지 않고 열심히 일하는 사원이 되겠습니다!</p>
+				</div>
+				<div data-role="collapsible" >
+					<h3>포부</h3>
+					<p>제가 프로그래머가 된다면 홈페이지를 이용할 때 부드럽게 움직일 수 있고 오류가 나지 않도록 검사를 하고 검색을 하여
+					편하게 이용 할 수 있는 사이트를 만들 수 있도록 노력하겠습니다
+					</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>자신을 사랑하고 맡은 일은 책임감 있게 하자</h1>
+		</div>		
+	</div>
+	
+	<div data-role="page" id="movie" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>영상</h1>
+			<console></console>
+		</div>
+		<div data-role="content" >
+			<div class="ui-bar ui-bar-a">개발자의 모든것</div><br/>
+			<li><iframe width="100%" height="315" src="https://www.youtube.com/embed/Xxg581iRWks" 
+				title="YouTube video player" 
+				frameborder="0" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+				allowfullscreen></iframe>
+			</li><br/>
+			<div class="ui-bar ui-bar-a">작업영상</div><br/>
+			<li><video controls width="100%" preload="metadata">
+				<source src="coding ing.mp4" type="video/mp4">
+			</video></li>
+		</div>
+		<div data-role="footer" data-theme="b">
+		</div>
+	</div>
+	
+	<div data-role="page" id="wizard3-1">
+		<div data-role="header">
+			<h1>be okay</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e">R3HAB, HRVY - Be okay</div><br/>
+			<audio controls width="100%" preload="metadata">
+				<source src="be okay.mp3" type="audio/mp3">
+			</audio>	
+			<img src="mugic 1.jpg" alt="" width="100%">
+		</div>
+		<div data-role="footer">
+			<a href="#home"  data-direction="reverse">이전</a>
+			<a href="#wizard3-2" data-rel="dialog" data-transition="slide">다음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="wizard3-2">
+		<div data-role="header">
+			<h1></h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e">a sky full of stars - 진영</div><br/>
+			<audio controls width="100%" preload="metadata">
+				<source src="mugic2.mp3" type="audio/mp3">
+			</audio>			
+			<img src="mugic.JPG" alt="" width="100%">
+		</div>
+		<div data-role="footer">
+			<a href="#wizard3-1"  data-direction="reverse">이전</a>
+			<a href="#home">처음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="gallery"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>내 갤러리</h1>
+		</div>
+		<div id=wrap>
+			<div>
+				<button class ="prev">이전</button>
+				<button class="next">다음</button>
+			</div>
+			<div class="imgBox style:500px;height:500px;">
+				<img class="img on" src="5-1.jpg" />	
+				<img class ="img" src="6-1.jpg" />	
+				<img class="img" src="7-1.jpg" />
+				<img class="img" src="8-1.jpg" />
+				<img class="img" src="9-1.jpg" />
+				<img class="img" src="10-2.jpg" />
+				<img class="img" src="11-1.jpg" />
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>자기자신을 사랑하며 맡은 일은 끝까지 하기</h1>
+		</div>		
+	</div>
+
+	<div data-role="page" id="fav"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>좋아하는 것</h1>
+		</div>
+		<div class="container">
+			<ol class="a food">
+				<li>귤</li>
+				<li>사과</li>
+				<li>포도</li>
+			</ol>
+			
+			<ol class="food b">
+				<li>딸기쿠키프라페</li>
+				<li>청포도에이드</li>
+				<li>누텔라와플</li>
+			</ol>
+			
+			</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>자기자신을 사랑하며 맡은 일은 끝까지 하기</h1>
+		</div>		
+	</div>
+
+	<div data-role="page" id="gi"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>기타사항</h1>
+		</div>
+		<span id="toggleSpan">정보 더보기</span>
+	
+			<br><br>
+	
+			<p id="detailInfo">
+				본명
+				민지은<br><br>
+				사는곳<br>
+				2002년 4월 23일, 울산광역시 울주군 / 21세<br><br>
+				출신대학교<br>
+				부산경상대학교<br><br>
+				가고싶은 회사<br>
+				카카오, 중소기업, 하이브<br><br>
+				성격<br>
+				착하고 내성적이며 남을 도와 주기 위해 먼저 다가가고 성실한 성격<br><br>
+				가족<br>
+				부모님, 오빠<br><br>
+				<img src="pet-1.jpg">
+			</p>
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<h1>자기자신을 사랑하며 맡은 일은 끝까지 하기</h1>
+			</div>		
+	</div>
+
+
+
+	<script type="text/javascript" src="image.js"></script>	
+</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Etc Traversing</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<style>
+		.container * { 
+			display: block;
+			border: 1px solid lightgray;
+			padding: 5px;
+			margin: 15px;
+		}
+	</style>
+	<script>
+		$(function() {
+			$("button").on("click", function() {
+				$("#divBox")		// id가 "divBox"인 요소의
+					.find("p")		// 자손 요소 중에서 <p>요소를 모두 선택하고,
+					.end()			// 선택된 요소의 집합을 find() 메소드의 실행 전으로 복원함.
+					.css("border", "2px solid #F5A9F2");	// 따라서 id가 "divBox"인 요소의 CSS 스타일을 설정함.
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<h1>.end() 메소드</h1>
+    <span>마지막으로 실행한 메소드의 실행 전 상태로 선택한 요소의 집합을 복원</span>
+	<div class="container">
+		<div id="divBox">div 요소
+			<p>p 요소</p>
+		</div>
+	</div>
+	<button>div 요소 선택</button>
+	
+</body>
+
+</html>

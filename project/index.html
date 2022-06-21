@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title> 제이쿼리 </title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/main.js"></script>
+<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/PIE.js"></script>
+	<script>
+		$(function(){
+			if (window.PIE) {
+				$('.rounded').each(function() {
+								PIE.attach(this);
+				});
+			}
+		});
+	</script>
+	<style>
+		body{min-width:1024px;}
+	</style>
+<![endif]-->
+</head>
+<body>
+	<!--헤더 영역-->
+	<div id="header-wrap">
+		<header class="header-inner">
+			<h1>
+				<a href="#">
+				<picture>
+								<source media="(max-width:200%)" srcset="images/common/jqery2.png">
+								<img src="images/common/jquery.jpg" alt="jquery">
+				</picture>
+				</a>
+			</h1>
+			<p class="mobile-menu-open">
+				<button>
+								<span class="blind">메뉴 열기</span>
+								<span></span>
+								<span></span>
+								<span></span>
+				</button>
+			</p>
+					<ul class="util-menu">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Login</a></li>
+						<li><a href="#">Member</a></li>
+						<li><a href="#">Sitemap</a></li>
+					</ul>
+					<nav id="gnb">
+						<h2 class="blind">메인메뉴</h2>
+						<ul>
+							<li class="m1">
+								<a href="#" >형제요소의선택</a>
+								<ul>
+									<li><a href="sibling/siblings().html">siblings()</a></li>
+									<li><a href="sibling/nextUntil().html">nextUntil()</a></li>
+									<li><a href="sibling/next().html">next()</a></li>
+								</ul>
+							</li>
+							<li class="m2">
+								<a href="#">조상요소의선택</a>
+								<ul>
+									<li><a href="ancestor/parent().html">parent()</a></li>
+									<li><a href="ancestor/parents().html">parents()</a></li>
+									<li><a href="ancestor/parentsUntil().html">parentsUntil()</a></li>
+									<li><a href="ancestor/closest().html">closest()</a></li>
+								</ul>
+							</li>
+							<li class="m3">
+								<a href="#">기타탐색메소드</a>
+								<ul>
+									<li><a href="othermethod/add().html">add()</a></li>
+									<li><a href="othermethod/each().html">each()</a></li>
+									<li><a href="othermethod/end().html">end()</a></li>
+									<li><a href="othermethod/offsetParent().html">offsetParent()</a></li>
+								</ul>
+							</li>
+							<li class="m4 no-sub">
+								<a href="http://www.tcpschool.com/jquery/jq_intro_basic">그 외 jquery설명</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<p class="mobile-menu-close">
+					<button>
+						<span class="blind">메뉴닫기</span>
+						<span></span>
+						<span></span>
+					</button>
+				</p>
+			</div>
+		</header>
+	</div>
+	<!--//헤더 영역-->
+	<!--콘테이너 영역-->
+	<div id="container">
+		<section id="main-visual" class="rounded">
+			<h3 class="blind">요소의선택</h3>
+			<ul class="main-visual-slide">
+				<li>
+					<div class="visual-item-wrap item1">
+					<h4 class="visual-title">형제요소의 선택</h4>
+					<p>
+						<span>.siblings()<br>
+							선택한 요소의 형제(sibling) 요소 중에서 지정한 선택자에 해당하는 요소를 모두 선택합니다.
+							<br>
+						</span>
+					</p>
+					<p class="detail-view"><a href="ex.html">자세히 보기</a></p>
+					</div>
+				</li>
+				<li>
+					<div class="visual-item-wrap item2">
+					<h4 class="visual-title">조상요소의선택</h4>
+					<p>
+						<span>.parent() , .closest() <br>
+							선택한 요소의 부모(parent) 요소를 선택
+							자신을 포함한 조상 요소 중에서 전달받은 선택자에 해당하는 요소의 집합에서 가장 첫 번째 요소를 선택
+							<br>
+						</span>
+					</p>
+					<p class="detail-view"><a href="ex2.html">자세히 보기</a></p>
+					</div>
+				</li>
+				<li>
+					<div class="visual-item-wrap item3">
+					<h4 class="visual-title">.each() </h4>
+					<p>
+						<span>선택한 요소 집합의 요소마다 전달받은 콜백 함수를 실행
+							.each() 메소드를 사용하면, 선택한 요소 집합의 각 요소마다 콜백 함수를 따로 실행
+							<br>
+						</span>
+					</p>
+					<p class="detail-view"><a href="ex3.html">자세히 보기</a></p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section id="notice-tab-wrap" class="rounded">
+			<h3 class="sec-tit-1">NOTICE &amp; NEWS</h3>
+			<h4 class="tab-btn-1"><a href="#" class="on">공지사항</a></h4>
+			<div class="tab-container-1">
+				<ul>
+					<li><a href="jquery/mje2.html">포트폴리오완료</a><span>2022.05.31</span></li>
+					<li><a href="company/index.html">가고싶은회사완료</a><span></span></li>
+				</ul>
+				<p class="icon-more"><a href="#">more</a></p>
+			</div>
+			<h4 class="tab-btn-2"><a href="#">새소식</a></h4>
+			<div class="tab-container-2">
+				<p class="no-write">곧 종강이 다가옵니다!!</p>
+			</div>
+		</section>
+		<section id="best-book-wrap">
+			<h3 class="sec-tit-1">coding공감</h3>
+			<ul class="best-book-list grid">
+				<li class="grid-item">
+					<p><a href="#"><img src="images/main/coding.jpg" alt=""></a></p>
+					<p><a href="#"><img src="images/main/coding2.jpg" alt=""></a></p>
+				</li>
+				<li class="grid-item">
+					<a href="#"><img src="images/main/coding3.jpg" alt=""></a>
+				</li>
+				<li class="grid-item">
+					<p><a href="#"><img src="images/main/coding4.jpg" alt=""></a></p>
+					<p><a href="#"><img src="images/main/coding5.jpg" alt=""></a></p>
+				</li>
+				<li class="grid-item">
+						<a href="#"><img src="images/main/coding6.jpg" alt=""></a>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<!--//콘테이너 영역-->
+	<!--푸터 영역-->
+	<div id="footer-wrap">
+		<footer id="footer">
+			<small>202106107&copy;제이쿼리 과제 완료</small>
+		</footer>
+	</div>
+	<!--//푸터 영역-->
+</body>
+</html>
